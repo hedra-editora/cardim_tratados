@@ -1,9 +1,9 @@
-\documentclass[semcabeco,showtrims,12pt,conselho,spreadimages]{memoir}
+\documentclass[showtrims,12pt,conselho,spreadimages]{memoir}
 
 \usepackage[largepost]{hedraoptions} %% << %%%%%%%%%%%%%%%%
 \usepackage[baruch]{hedrastyles}
 \usepackage[xetex,chicagofootnotes]{tipografia}
-\usepackage[standart,sempontinhos]{toc}
+\usepackage[standart,compontinhos]{toc}
 \usepackage{hedraextra}
 \usepackage{penalidades}
 \usepackage{graficos}
@@ -36,6 +36,16 @@
   \mbox{}\par\vskip-\baselineskip
   \let\@afterindentfalse\@afterindenttrue
 }
+\makeatother
+
+\makeatletter
+
+\def\@xfootnote[#1]{%
+  \protected@xdef\@thefnmark{#1}%
+  \@footnotemark\@footnotetext}
+%\def\footnoterule{\kern-8\p@
+   %\hrule \@width 2in \kern 7.6\p@} % the \hrule is .4pt high
+\skip\footins=10mm\@plus3mm\@minus5mm
 \makeatother
 %\usepackage{fancyhdr}
 %\pagestyle{fancy}
